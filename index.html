@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>still a Noob 😊 in Coding lol::gitHub birth Apr12th, 2026:be Kind ;)</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main>
+<div class = 'container'>
+  <h1>Expense Tracker</h1>
+
+  <div class = 'balance-container'>
+
+    <h2>Your Balance</h2>
+                 <h1 id = 'balance'> $ 0.00 </h1>
+  </div>
+    <div class = 'summary'>
+
+       <div class = 'income'>
+        <h3>Income</h3>
+        <p id = 'income-amount'>$ 0.00</p>
+       </div>
+
+       <div class = 'expense'>
+        <h3>Expense</h3>
+        <p id = 'expense-amount'>$ 0.00</p>
+
+        
+       </div>
+    </div>
+  
+
+  <div class = 'main-content'> 
+
+    <div class = 'transaction-container'>
+    <h2>Transactions</h2>
+      
+      <ul id = 'transaction-list'>  
+        
+        <button class='add'> > </button>
+<!--
+        <button id="open-add-btn" class="chevron-btn">⌄</button>
+-->
+        <!-- transaction list will be inserted here using JS later -->
+      </ul>
+      
+    </div>
+    
+  
+    <div class = 'form-container'> 
+      <h2>Add Transaction</h2>
+      
+      <form id = 'transaction-form'> 
+
+        <div class = 'form-group'>
+          <!-- butt psswrd thing -->
+<button id='open-add-btn' class='chevron-btn'> 🔜</button>
+          <label for= 'description'>Description </label>
+<input type= 'text' id= 'description' placeholder= 'Enter description ...' required  />
+
+
+          
+
+            
+        </div>
+          <div class = 'form-group'>
+        
+          <label for= 'amount'>Amount </label>
+<input type= 'number' id= 'amount' step="0.01" placeholder= 'Enter amount ...'  />
+            <small>use negative (-) for expenses</small>
+
+<!-- adding a UX feature here-->
+<!--<div class="input-row">
+  input 
+    id="amount"
+    type="text"
+    inputmode="decimal"
+    pattern="[0-9\-]*"
+    placeholder="Enter Expense(-)..."
+  />
+  
+  <button id="insertDash">(–) push for negative amts</button>
+</div>
+ -->           
+  <!--end UX feature-->
+
+   <!--try2 from co-pilot suggest-->
+<div class="number-wrapper">
+  <button type="button" class="btn-dec">-</button>
+  <!-- 
+  <input type="number" id="amount" min="-100000000" max="100000000" value="0" />
+     -->
+
+  <button type="button" class="btn-inc">+ </button>
+</div>
+
+           
+        </div>
+       <button type= 'submit' id='success'>submit transaction</button> 
+  </form>
+  </div>
+  </div>
+</div>
+
+    <!--Last bit strt here (psswrd)
+<!-- Password Modal -->
+<div id="password-modal" class="modal hidden">
+  <div class="modal-content">
+    <h3>Enter Password</h3>
+    <input id="password-input" type="password" placeholder="Password..." />
+    <button id="password-submit">Unlock</button>
+    <p id="password-error" class="error hidden">Incorrect password</p>
+  </div>
+</div>
+
+<!-- Your chevron button 
+<button id="open-add-btn" class="chevron-btn">⌄</button>
+-->
+  <!-- last (psswrd) bit end -->
+    <script src= 'script.js'></script>
+</body>
+</html>
