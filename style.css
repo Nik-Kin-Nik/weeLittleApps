@@ -1,0 +1,445 @@
+
+:root {
+  /* Benjamin Moore Palette */
+  --silhouette: #3f3e3d;
+  --narragansett-green: #42874b;
+  --southwest-pottery: #d08963;
+  --first-crush: #e8e4d0;
+}
+
+/*  https://www.youtube.com/watch?v=BiA08jfr4RU&t=10499s   */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Optima, Candara, 'Noto Sans', source-sans-pro, sans-serif;  
+  font-style: italic;
+  color: var(--silhouette);
+/*mine above*/
+  background: linear-gradient(135deg, var(--first-crush), var(--narragansett-green), var(--southwest-pottery), var(--first-crush), var(--narragansett-green));
+  min-height: 100vh;
+ display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+ {
+  outline: 22px solid red;
+}
+
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  background-color: var(--first-crush);
+  padding: 2rem;
+  border-radius: 40px;
+  box-shadow: 0 12px 24px var(--narragansett-green);
+}
+
+h1{
+  text-align: center;
+  margin-bottom: 35px;
+  font-size: 2.2 rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-shadow: 0 11px 22px var(--narragansett-green);
+}
+h2{
+  color: var(--narragansett-green);
+  text-shadow: 0 2px 1px var(--silhouette);
+ margin-top: -25px;
+margin-bottom: 1rem;
+font-size: 1.35rem;
+  font-weight: 600;
+  text-align: center;
+  
+}
+.balance-container h1 {
+  margin-top: -15px;
+  margin-bottom: -5px;
+}
+.summary {
+display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  border-radius:5%;
+}
+.main-content {
+display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 22px;
+  background: linear-gradient(135deg, 
+    var(--southwest-pottery), var(--first-crush), var(--southwest-pottery),  var(--first-crush), var(--southwest-pottery), var(--first-crush));
+  border-radius: 4%;
+}
+.income
+ {
+  color: var(--narragansett-green);
+   font-weight: 800;
+   /*text-shadow: 5px 5px 5px var(--first-crush);*/
+letter-spacing: 2px;
+ }
+.expense {
+  color: var(--southwest-pottery);
+  font-weight: 800;
+  /*text-shadow: 2px 3px 3px var(--silhouette);*/
+  letter-spacing: 2px;
+}
+.income,
+.expense { 
+  margin: 2px 1px 1px 25px;
+  background: var(--first-crush);
+  border-radius: 5%;
+  padding: 4px;
+  transition: transform 0.2s ease;
+}
+.income:hover,
+.expense:hover {
+  transform: translateY(-3px);
+}
+.income p,
+.expense p {
+  font-size: 1.65rem;
+}
+/* good above here */
+
+/* button try */
+.add {
+  border: 2px solid #9fffe0;        /* mint tint */
+  color: #2a7f6b;                   /* deeper mint */
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition:
+    transform 1.35s ease,
+    box-shadow .35s ease,
+    border-color .35s ease;
+  box-shadow: 0 0 0 rgba(159,255,224,0);
+}
+
+.add:hover {
+      background-color: #ADCDB3;
+  transform: rotate(360deg) scale(.80);
+  border-color: #7fffd4;
+  box-shadow: 0 0 14px rgba(159,255,224,0.9);
+    }
+
+/*end button */
+
+.transaction-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+margin-top: 2px;
+}
+
+#transaction-list {
+  list-style: none;
+  max-height: 500px;
+  overflow-y: auto;
+  padding: 5px;
+  flex-grow: 1;
+  border-radius: 5px;
+  outline: 2px solid green;
+  margin: 0px -10px;
+}
+
+/*to DO again later, more later*/
+#transaction-list::-webkit-scrollbar {
+  width: 9px;
+
+}
+#transaction-list::-webkit-scrollbar-track {
+  background-color: var(--southwest-pottery);
+  border-radius: 9px;
+}
+#transaction-list::-webkit-scrollbar-thumb { background-color: var(--first-crush);  
+ border-radius: 9px;             } 
+#transaction-list::-webkit-scrollbar-thumb:hover,
+#transaction-list::-webkit-scrollbar-thumb:active { background-color: #ADCDB3; }
+
+/* ?? started here ? his was just .transaction mine .transaction-container*/
+ .transaction-container {
+  display: flex;
+  justify-content: space-between;
+align-items: center;
+  padding: 1px 1px;
+  margin-bottom: 15px;
+   box-shadow: 10px 3px 4px var(--silhouette); 
+  transition: all 0.2s ease;
+  border-right: 8px solid var(--narragansett-green); 
+  border-radius: 5px;
+  background: var(--first-crush);
+  animation: slideIn 0.2s ease;
+}
+@keyframes slideIn {
+from {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+/* ?? again class name in html mark up ? */
+
+/* check for h2 elsewhere...locate other h2 reference */
+.transaction-container h2 {
+    color: var(--narragansett-green);
+  text-shadow: 0 2px 1px var(--silhouette);
+ margin-top: -20px;
+margin-bottom: .25rem;
+font-size: 1.35rem;
+  font-weight: 600;
+}
+.transaction-container li {
+  display: flex;
+  justify-content: space-between;
+}
+.transaction-container:hover {
+  transfrom: translateX 4px;
+box-shadow: 8px 4px 4px var(--first-crush); 
+}
+/* ?? again name @ 2:38:32*/
+
+.transaction-container .income
+{
+  border-right: 4px solid var(--narragansett-green);
+  margin-left: 5px;
+}
+
+.transaction-container .expense
+  {
+  border-right: 4px solid var(--southwest-pottery);
+    margin-left: -2px;
+}
+/*markup part said add later in JS re: name*/
+.transaction-container .delete-btn {
+  background: none;
+  border: none;
+  color: var(--southwest-pottery);
+  cursor: pointer;
+  font-size: 1.2rem;
+  opacity: 1;
+  transition: all 0.2s ease;
+  padding: 4px 4px;
+  border-radius: 4px;
+  text-align: center;
+}
+.transaction-container:hover .delete-btn {
+  outline: 1px dotted var(--southwest-pottery);
+}
+.transaction-container .delete-btn:hover {
+  transform: scale(1.2);
+}
+/* area above pooof */
+/* to fix  🪛  🔩 */
+
+.form-container {
+  background: var(--first-crush);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 9px var(--narragansett-green);
+  height: 100%;
+  display: flex;
+  flex-direction: column;  
+}
+.form-container h2 {
+    color: var(--narragansett-green);
+  text-shadow: 0 2px 1px var(--silhouette);
+ margin-top: -40px;
+margin-bottom: 1rem;
+font-size: 1.35rem;
+  font-weight: 600;
+  
+}
+
+.form-container form {
+height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.form-group {
+  margin-bottom: 12px;
+}
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--silhouette);
+  font-weight: 500;
+}
+input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 3px dashed #ADCDB3;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  background-color: var(--first-crush);
+}
+
+input:focus {
+  outline: none;
+}
+input:hover {
+  border-color: var(--narrangansett-green), var(--southwest-pottery);
+}
+small {
+  color: purple;
+  font-size: .75rem;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  display: block;
+  text-align: center;
+}
+button[type='submit'] {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(140deg, var(--first-crush), var(--narragansett-green), var(--first-crush) 95%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px #D1D1D1;
+  margin-top: auto;
+}
+button[type='submit']:hover {
+transform: translateY(-2px);
+  box-shadow: 0 6px 16px var(--southwest-pottery);
+}
+button[type='submit']:active {
+transform: translateY(0);
+}
+/* r e s p o n s i v n e s s --my weakness*/
+@media (max-width: 900px) {
+  .main-content {
+    grid-template-columns: 1fr;
+  }
+#transaction-list {
+  max-height: 300px;
+}
+}
+
+/* extra UX feature 
+
+.input-row {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+#amount {
+  flex: 1;
+  padding: 8px;
+  font-size: 16px;
+}
+
+#insertDash {
+  padding: 8px 12px;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #f5f5f5;
+}
+
+/* try2 from co-pilot */
+/* Hide native spinner where it exists */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Simple layout */
+.number-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.number-wrapper input {
+  width: 5rem;
+  text-align: center;
+}
+
+.number-wrapper button {
+  font-size: 30px;
+  padding: 0.5rem .75rem;
+}
+.number-wrapper .btn-inc
+{
+  margin-left: 8px;
+  outline: 3px solid var(--narragansett-green);
+  border-radius: 5%;
+}
+.number-wrapper .btn-dec {
+  margin-right: 8px;
+  outline: 3px solid  var(--southwest-pottery);
+  font-weight: 700;
+  border-radius: 5%;
+}
+button input{
+  border: none;
+}
+
+/*last bit here (psswrd)*/
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 260px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.error {
+  color: red;
+  margin-top: 8px;
+}
+
+.error.hidden {
+  display: none;
+}
+
+.shake {
+  animation: shake 0.3s;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  50% { transform: translateX(4px); }
+  75% { transform: translateX(-4px); }
+  100% { transform: translateX(0); }
+}
+/* (psswrd) bit end */
