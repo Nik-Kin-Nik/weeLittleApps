@@ -1,1 +1,8 @@
+// 2 calls to add
+// call 1
+transactions.push(transaction);
+saveTransactions();
 
+// call 2
+transactions = transactions.filter(t => t.id !== id);
+saveTransactions();
